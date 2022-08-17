@@ -1,0 +1,4 @@
+
+export const ICOAddress = "0x72e6EaA6B55dc583963E169731ac1d9FE6bd11AA";
+export const USDCAddress = "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d";
+export const SWINKAddress = "0x2Cbc4D0E630f01e1871200D4fe272297638Be472";
