@@ -13,7 +13,6 @@ export default function App() {
   return (
     <ThemeConfig>
       <ThemeLocalization>
-        <Settings />
         <Router />
       </ThemeLocalization>
     </ThemeConfig>

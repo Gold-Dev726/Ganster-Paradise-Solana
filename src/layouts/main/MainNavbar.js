@@ -9,14 +9,15 @@ import {
   Container,
   Hidden,
   Stack,
-  Link
+  Link,
+  Typography
 } from "@mui/material";
 // hooks
 import useOffSetTop from "hooks/useOffSetTop";
 // components
 import Logo from "components/Logo";
 
-import ConnectButton from "components/ConnectButton";
+import PhantomButton from "components/PhantomButton";
 import LanguagePopover from "./LanguagePopover";
 //
 import MenuDesktop from "./MenuDesktop";
@@ -25,8 +26,8 @@ import navConfig from "./MenuConfig";
 
 // ----------------------------------------------------------------------
 
-const APP_BAR_MOBILE = 80;
-const APP_BAR_DESKTOP = 100;
+const APP_BAR_MOBILE = 64;
+const APP_BAR_DESKTOP = 64;
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: APP_BAR_MOBILE,
@@ -60,9 +61,7 @@ export default function MainNavbar() {
 
   return (
     <>
-      <AppBar
-        sx={{ boxShadow: 0, bgcolor: "transparent", backgroundImage: "none" }}
-      >
+      <AppBar sx={{ boxShadow: 0, bgcolor: "black", backgroundImage: "none" }}>
         <ToolbarStyle
           disableGutters
           sx={{
@@ -72,26 +71,39 @@ export default function MainNavbar() {
             })
           }}
         >
-          <Container maxWidth="lg">
-            <Stack direction="row" alignItems="center" spacing={5}>
-              <Box component={RouterLink} to="/">
-                <Logo sx={{ width: { xs: 80, md: 80 } }} />
-              </Box>
+          <Container maxWidth="xl">
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+              spacing={5}
+            >
+              <Stack
+                direction="row"
+                alignItems="center"
+                spacing={2}
+                sx={{ height: 64, px: 3, bgcolor: "#302929" }}
+              >
+                <Box component="img" src="/icons/menu.png" />
+                <Typography>My Collections</Typography>
+              </Stack>
+              {/* <Box component={RouterLink} to="/"> */}
+              <Typography variant="h4" align="center" lineHeight={1}>
+                Gangsters <br />
+                Paradise
+              </Typography>
+              {/* </Box> */}
 
-              <Hidden mdDown>
+              {/* <Hidden mdDown>
                 <MenuDesktop
                   isOffset={isOffset}
                   isHome={isHome}
                   navConfig={navConfig}
                 />
-              </Hidden>
-
-              <Box flex={1} />
+              </Hidden> */}
 
               <Stack direction="row" spacing={2}>
-                <LanguagePopover />
-                <ConnectButton />
-               
+                <PhantomButton />
               </Stack>
               <Hidden mdUp>
                 <MenuMobile navConfig={navConfig} />
