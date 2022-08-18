@@ -4,6 +4,7 @@ import { Navigate, useRoutes, useLocation } from "react-router-dom";
 import MainLayout from "layouts/main";
 import DashboardLayout from "layouts/dashboard";
 import Homepage from "./pages/Homepage";
+import Collectionpage from "./pages/Collectionpage";
 import Buypage from "./pages/Buypage";
 import Mypage from "./pages/Mypage";
 import Loading from "components/Loading";
@@ -21,20 +22,10 @@ export default function Router() {
     {
       path: "/",
       element: <MainLayout />,
-      children: [{ path: "/", element: <Homepage /> }]
-    },
-    {
-      path: "app",
-      element: <DashboardLayout />,
       children: [
-        { path: "/app/buy", element: <Buypage /> },
-        { path: "/app/address/:id", element: <Mypage /> }
+        { path: "/", element: <Homepage /> },
+        { path: "/collection", element: <Collectionpage /> }
       ]
-    },
-    {
-      path: "dashboard",
-      element: <DashboardLayout />,
-      children: [{ path: "/dashboard", element: <Homepage /> }]
     }
   ]);
 }

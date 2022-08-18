@@ -47,13 +47,26 @@ const PhantomButton = () => {
   }, []);
 
   return (
-    <Button
-      sx={{ bgcolor: "#B56E92", borderRadius: 5, color: "white", px: 3 }}
-      startIcon={<Box component="img" src="/icons/wallet.png" />}
-    >
-      Connect Wallet
-    </Button>
+    <>
+      {wallet ? (
+        <Button
+          sx={{ bgcolor: "#B56E92", borderRadius: 5, color: "white", px: 3 }}
+          startIcon={<Box component="img" src="/icons/wallet.png" />}
+          onClick={connectWallet}
+        >
+          {wallet}
+        </Button>
+      ) : (
+        <Button
+          sx={{ bgcolor: "#B56E92", borderRadius: 5, color: "white", px: 3 }}
+          startIcon={<Box component="img" src="/icons/wallet.png" />}
+          onClick={connectWallet}
+        >
+          Connect Wallet
+        </Button>
+      )}
+    </>
   );
 };
 
-export default PhantomButton
+export default PhantomButton;

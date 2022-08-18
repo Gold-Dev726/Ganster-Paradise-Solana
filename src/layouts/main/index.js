@@ -9,7 +9,16 @@ import MainFooter from "./MainFooter";
 export default function MainLayout() {
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          pt: { xs: 5, md: 10 },
+          background: "url(/images/bg.png)",
+          backgroundSize: "100% 100%",
+          backgroundRepeat: "no-repeat, no-repeat",
+          // backgroundPosition: "0px 0px, center bottom"
+          height: "100vh"
+        }}
+      >
         <MainNavbar />
         <Box>
           <Outlet />
